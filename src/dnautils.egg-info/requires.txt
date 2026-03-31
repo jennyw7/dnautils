@@ -1,0 +1,8 @@
+pandas>=1.5
+sqlalchemy>=1.4
+pymysql>=1.0
+cryptography>=41
+
+[snowflake]
+snowflake-sqlalchemy>=1.5
+snowflake-snowpark-python>=1.10

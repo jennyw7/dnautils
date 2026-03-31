@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: dnautils
+Version: 0.1.0
+Summary: Shared wrappers around legacy Common_Functions utilities
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=1.5
+Requires-Dist: sqlalchemy>=1.4
+Requires-Dist: pymysql>=1.0
+Requires-Dist: cryptography>=41
+Provides-Extra: snowflake
+Requires-Dist: snowflake-sqlalchemy>=1.5; extra == "snowflake"
+Requires-Dist: snowflake-snowpark-python>=1.10; extra == "snowflake"
+
+# dnautils
+
+Starter package to share utilities from `Common_Functions.py`.
+
+## Install (editable)
+
+From the repository root:
+
+```bash
+pip install -e ./dna-utils
+```
+
+## Usage
+
+```python
+from dnautils import daily_looper_fun, RS_Daily_conn_func
+```

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dnautils"
+version = "0.1.0"
+description = "Shared wrappers around legacy Common_Functions utilities"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "pandas>=1.5",
+  "sqlalchemy>=1.4",
+  "pymysql>=1.0",
+  "cryptography>=41",
+]
+
+[project.optional-dependencies]
+snowflake = [
+  "snowflake-sqlalchemy>=1.5",
+  "snowflake-snowpark-python>=1.10",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
