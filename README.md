@@ -14,4 +14,7 @@ pip install -e ./dnautils
 
 ```python
 from dnautils import daily_looper_fun, RS_Daily_conn_func
+from dnautils import pykeys
+
+host = pykeys.redshift_dl_host
 ```
