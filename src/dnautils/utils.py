@@ -1424,7 +1424,7 @@ Note: I have removed archived campaigns that already exist in the mapping file s
 def archived_campaign_mapping_file(archived_cids, mapping_file_path):
     import os
     import platform
-    import pandas as pd)
+    import pandas as pd
     import numpy as np
     from datetime import datetime
     import re
