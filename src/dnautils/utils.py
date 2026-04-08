@@ -29,7 +29,7 @@ from cryptography.hazmat.primitives import serialization
 
 # For reading local config
 
-script_path = f'/Users/{os.environ["USER"]}/Data/config.txt'
+script_path = f'/Users/{os.environ["USER"]}/Documents/config.txt'
 exec(open(script_path).read())
 
 # Server side config
@@ -38,9 +38,9 @@ sysname = platform.uname()[0]
 if platform.system() == "Linux":
     print("Server")
     credential_path = "/home/ec2-user/pa-lead/creative_studio/python"
-elif getpass.getuser() == "jan":
-    print("Local - Jan")
-    credential_path = "/Users/jan/Documents/Reporting/script"
+elif getpass.getuser() == os.environ["USER"]:
+    print("Local -", os.environ["USER"])
+    credential_path = f"/Users/{os.environ['USER']}/Documents/Reporting/script"
 
 # Enable SSL for all Redshift connections made via psycopg2
 os.environ["REDSHIFT_SSLMODE"] = "disable"
@@ -219,7 +219,7 @@ def app_info_db_conn_func():
 
 # for pandas connection
 def snowflake_pa_out_conn_func():
-    script_path = f'/Users/{os.environ["USER"]}/Data/config.txt'
+    script_path = f'/Users/{os.environ["USER"]}/Documents/config.txt'
     exec(open(script_path).read())
     pa_out_engine_string = sURL(
         account=snowflake_creds["pa_sf_server"],
